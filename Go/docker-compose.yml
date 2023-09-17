@@ -1,0 +1,58 @@
+version: '3'
+services:
+
+  gofrontwebapp:
+    container_name: vue_web
+    restart: always
+    build:
+      context: ./vueproject
+      dockerfile: Dockerfile
+    ports:
+      - "80:8080"
+    volumes:
+      - ./vueproject:/usr/src/app
+      - /usr/src/app/node_modules
+    links:
+      - gobackwebapp
+    networks:
+      - frontend      
+
+  gobackwebapp:
+    container_name: go_web
+    restart: always
+    build:
+      context: ./golangproject
+      dockerfile: Dockerfile
+    ports:
+      - "3500:3500"
+    volumes:
+      - ./golangproject:/go/src/myapp        
+    depends_on:
+      - mongo
+    networks:
+      - backend
+      - frontend      
+
+  mongo:
+    container_name: mongo      
+    image: mongo
+    restart: always      
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo:/data/mongo   
+    networks:
+      - backend
+
+networks: 
+  backend:
+  frontend:
+volumes:
+  gofrontwebapp:
+  gobackwebapp:                
+  mongo:
+
+
+
+
+
