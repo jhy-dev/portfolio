@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CAB432 Assignment 1 - N9066047 Joong Yoon</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="recipe" name="keywords">
+  <meta content="inspiration" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!--==========================
+  Header
+============================-->
+<header id="header">
+  <div class="container-fluid">
+
+    <div id="logo" class="pull-left">
+      <h1><a href="/" class="scrollto">FunCook</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+    </div>
+
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+      </ul>
+    </nav><!-- #nav-menu-container -->
+  </div>
+</header><!-- #header -->
+
+
+
+<main id="main">
+
+
+
+
+
+
+
+  <!--==========================
+    Portfolio Section
+  ============================-->
+  <section id="portfolio"  class="section-bg" >
+    <div class="container">
+
+
+
+
+
+
+      <h1 class="section-title">Food Gallery</h1>
+
+      <div class="row text-center text-lg-left" id="imagebox">
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+          <button type="button" id="loadmorebutton" class="btn btn-secondary  btn-lg btn-block">Load More</button>
+        </div>
+      </div>
+
+
+      </div>
+
+
+  </section><!-- #portfolio -->
+
+
+
+</main>
+
+
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/superfish/hoverIntent.js"></script>
+<script src="lib/superfish/superfish.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+<!-- Contact Form JavaScript File -->
+
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
+<!-- bring json data from back-end -->
+<script id="myflickr" type="application/json">
+  <%= flickrphotos %>
+</script>
+<script type="text/javascript">
+
+    //get the json data
+    var flickrContents=document.getElementById("myflickr").innerHTML;
+
+    //replace &#34; with quotation mark(")
+    //for example, changing &#34;number&#34; : 5 to "number" : 5
+    flickrContents=flickrContents.replace(/&#34;/g,"\"");
+
+    //convert json data to object array
+    var flickrObjects = JSON.parse((flickrContents));
+
+    //display 20 images initially - current length of food images to load initially is 20
+    const maxLoad=20;
+    var currentfoodLength=maxLoad;
+
+    //declare variables to create images embedded with food ai link
+    var finalcontainer=document.getElementById("imagebox");
+    var divcontainer;
+    var linkcontainer;
+    var imagecontainer;
+
+
+
+    //initially display food images
+    generateFoodImages();
+
+
+
+
+
+      function generateFoodImages()
+      {
+          for(let i=0; i<currentfoodLength; i++)
+          {
+              //create layout for images
+              divcontainer=document.createElement("div");
+              divcontainer.className="col-lg-3 col-md-4 col-xs-6";
+
+              //create a hyperlink to food ai link
+              linkcontainer=document.createElement("a");
+              linkcontainer.className="d-block mb-4 h-100";
+              linkcontainer.href=flickrObjects[i].foodai;
+
+              //create an image
+              imagecontainer=document.createElement("img");
+              imagecontainer.className="img-fluid img-thumbnail";
+              imagecontainer.src=flickrObjects[i].image_src;
+              imagecontainer.setAttribute("style", "width: 250px; height: 250px; object-fit: cover; overflow: hidden;");
+
+              //image is embedded inside hyperlink
+              linkcontainer.appendChild(imagecontainer);
+
+              //layout the image embedded with hyperlink
+              divcontainer.appendChild(linkcontainer);
+
+              //place the created sub container inside the existing main container
+              finalcontainer.appendChild(divcontainer);
+          }
+      }
+
+
+
+      $( "#loadmorebutton" ).click(function() {
+
+          //if the current length of food images is equal or more than the maximum number of flickr photos
+          if(currentfoodLength>=flickrObjects.length)
+          {
+              //hide the button as there is no need
+              $( "#loadmorebutton" ).hide();
+              alert("No more food images found");
+          }
+          //if the remaining number of images is equal or less than 20
+          else if((currentfoodLength+maxLoad)>=flickrObjects.length)
+          {
+              //the length of food images should be equal to the maximum number of flickr photos
+              currentfoodLength=flickrObjects.length;
+          }
+          //if the remaining number of images is more than 20, add 20 to the current length of food images
+          else
+          {
+              currentfoodLength+=maxLoad;
+          }
+          //remove all the existing images
+          while(finalcontainer.firstChild)
+          {
+              finalcontainer.removeChild(finalcontainer.firstChild);
+          }
+          //create new images
+          generateFoodImages();
+      });
+
+
+
+
+
+
+
+
+
+
+
+</script>
+

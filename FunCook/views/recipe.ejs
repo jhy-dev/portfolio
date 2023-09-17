@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CAB432 Assignment 1 - N9066047 Joong Yoon</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="recipe" name="keywords">
+    <meta content="inspiration" name="description">
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <!-- Bootstrap CSS File -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Main Stylesheet File -->
+    <link href="/css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<!--==========================
+  Header
+============================-->
+<header id="header">
+    <div class="container-fluid">
+
+        <div id="logo" class="pull-left">
+            <h1><a href="../../" class="scrollto">FunCook</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+            </ul>
+        </nav><!-- #nav-menu-container -->
+    </div>
+</header><!-- #header -->
+
+
+
+<main id="main">
+
+
+    <section id="call-to-action" class="wow fadeIn">
+        <div class="container">
+            <h3 id="foodHeading"></h3>
+            <p id="foodDescription"></p>
+            <a class="cta-btn" id="wikilink">Learn More</a>
+
+        </div>
+    </section><!-- #call-to-action -->
+
+
+
+    <section id="about">
+
+        <div class="container" id="sortfilterdiv">
+
+            <h3>Sort/Filter Options</h3><hr>
+
+
+
+
+
+
+            <div class="checkbox">
+
+                <div class="custom-control custom-control-inline">
+
+                    <label class="boxcontainer">
+                        <input id="sortCheckbox" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <span style="margin-left: 5px; margin-right: 50px;">Sort</span>
+                </div>
+            </div>
+
+            <div class="checkbox">
+
+            <div class="custom-control custom-control-inline">
+
+                    <label class="boxcontainer">
+                        <input id="calorieCheckbox" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <span style="margin-left: 5px; margin-right: 50px;">calories(kcal)</span>
+                </div>
+            </div>
+                <div class="checkbox">
+
+                <div class="custom-control custom-control-inline">
+
+                    <label class="boxcontainer">
+                        <input id="timeCheckbox" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <span style="margin-left: 5px; margin-right: 50px;">Cooking Time</span>
+                </div>
+                </div>
+                    <div class="checkbox">
+
+                    <div class="custom-control custom-control-inline">
+
+                    <label class="boxcontainer">
+                        <input id="ingredientCheckbox" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                    <span style="margin-left: 5px; margin-right: 50px;">Ingredients</span>
+                </div>
+                    </div>
+
+
+
+
+
+
+
+            <div class="form-group" id="sortdiv">
+                <label for="inputGroupSelect">Sort Options:</label>
+                <select class="custom-select custom-select-lg" id="inputGroupSelect">
+                    <option value="relevance" selected>Relevance(Default)</option>
+                    <option value="calorie">calories(kcal)</option>
+                    <option value="time">Cooking Time</option>
+                    <option value="Ingredient">Ingredients</option>
+                </select>
+            </div>
+
+
+
+
+
+            <div class="slidecontainer" id="caloriefilterdiv">
+
+                <h3 style="text-align:center;" id="caloriesHeading">Maximum calories: 5000 kcal</h2>
+                    <input type="range" min="0" max="10000" step="50" value="5000" class="slider" id="caloriesRanger" >
+                    <h4 style="text-align:left;">
+                        0
+                        <span style="float:right;">10000</span>
+                    </h4>
+
+            </div>
+
+
+
+            <div class="slidecontainer" id="timefilterdiv">
+
+                <h3 style="text-align:center;" id="timeHeading">Maximum Cooking Time: 100 mins</h2>
+                    <input type="range" min="0" max="200" step="1" value="100" class="slider" id="timeRanger" >
+                    <h4 style="text-align:left;">
+                        0
+                        <span style="float:right;">200</span>
+                    </h4>
+
+            </div>
+
+
+            <div class="slidecontainer" id="ingredientfilterdiv">
+
+                <h3 style="text-align:center;" id="ingredientHeading">Maximum Ingredients: 25</h2>
+                    <input type="range" min="0" max="50" step="1" value="25" class="slider" id="ingredientRanger" >
+                    <h4 style="text-align:left;">
+                        0
+                        <span style="float:right;">50</span>
+                    </h4>
+
+            </div>
+
+            <div class="container">
+
+                <div  class="center-block text-center">
+                    <button id="searchbutton" type="button" class="btn btn-lg btn-primary">Search</button>
+                    <button id="hidebutton" type="button" class="btn btn-lg btn-secondary">Cancel</button>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+<br>
+        <br><br>
+        <div class="container">
+
+
+            <header class="section-header">
+
+                <p><h3 id="recipetitleheading">
+
+                </h3>
+                <button id="showsortfilterbutton" type="button" class="btn btn-primary pull-right">Sort/Filter</button>
+                </p>
+            </header>
+
+            </header>
+
+
+
+
+
+            <div class="row" id="cardmaincontainer">
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-md-offset-5">
+                    <button type="button" id="loadmorebutton" class="btn btn-secondary  btn-lg btn-block">Load More</button>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- #about -->
+
+
+
+</main>
+
+
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/jquery/jquery-migrate.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/lib/easing/easing.min.js"></script>
+<script src="/lib/superfish/hoverIntent.js"></script>
+<script src="/lib/superfish/superfish.min.js"></script>
+<script src="/lib/wow/wow.min.js"></script>
+<script src="/lib/waypoints/waypoints.min.js"></script>
+<script src="/lib/counterup/counterup.min.js"></script>
+<script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="/lib/lightbox/js/lightbox.min.js"></script>
+<script src="/lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+<!-- Contact Form JavaScript File -->
+
+<!-- Template Main Javascript File -->
+<script src="/js/main.js"></script>
+
+</body>
+</html>
+
+<!-- bring json data from back-end -->
+<script id="getrecipes" type="application/json">
+<%= recipeResults %>
+</script>
+<script type="text/javascript">
+
+
+    //get the json data
+    var recipeContents=document.getElementById("getrecipes").innerHTML;
+
+    //replace &#34; with quotation mark(")
+    //for example, changing &#34;number&#34; : 5 to "number" : 5
+    recipeContents=recipeContents.replace(/&#34;/g,"\"");
+
+
+    var maincontainer=document.getElementById("cardmaincontainer");
+
+    //convert json data to object array
+    var recipeObjects = JSON.parse((recipeContents));
+
+    //recipe title that contains the length of recipes (for example, 200 recipes found)
+    document.getElementById("recipetitleheading").innerHTML=recipeObjects.length+" Recipes Found";
+
+    //display 15 recipes initially - current length of food recipes to display initially is 15
+    const maxLoad=15;
+    var currentRecipeLength=maxLoad;
+
+    //bring food name from back-end
+    const getmyfoodName="<%= getfoodname %>";
+
+
+    $(document).ready(function() {
+
+
+
+
+        //initially hide wiki url button and hide sort/filtering container
+        $( "#wikilink" ).hide();
+        $( "#sortfilterdiv" ).hide();
+        //initially display recipes
+        generateRecipes();
+
+
+
+
+
+        //===========================================================CHECK BOXES AND SLIDERS START
+
+
+        //CALORIE CHECK BOX (on change)
+        $('#calorieCheckbox').change(function() {
+            //if checked, show the calorie container that contains calorie slider
+            if($(this).is(":checked")) {
+                $( "#caloriefilterdiv" ).show();
+
+            }
+            else{
+                $( "#caloriefilterdiv" ).hide();
+
+            }
+        });
+        //CALORIE SLIDER (on change)
+        $( "#caloriesRanger" ).change(function() {
+
+            //display the value of calorie slider
+            document.getElementById("caloriesHeading").innerHTML="Maximum calories: "+$( "#caloriesRanger" ).val()+" kcal";
+
+        });
+
+
+
+        //COOKING TIME CHECK BOX (on change)
+        $('#timeCheckbox').change(function() {
+            //if checked, show the time container that contains time slider
+            if($(this).is(":checked")) {
+                $( "#timefilterdiv" ).show();
+
+            }
+            else{
+                $( "#timefilterdiv" ).hide();
+
+            }
+        });
+        //COOKING TIME SLIDER (on change)
+        $( "#timeRanger" ).change(function() {
+
+            //display the value of time slider
+            document.getElementById("timeHeading").innerHTML="Maximum Cooking Time: "+$( "#timeRanger" ).val()+" mins";
+
+        });
+
+
+
+        //INGREDIENT CHECK BOX (on change)
+        $('#ingredientCheckbox').change(function() {
+            //if checked, show the ingredient container that contains ingredient slider
+            if($(this).is(":checked")) {
+                $( "#ingredientfilterdiv" ).show();
+
+            }
+            else{
+                $( "#ingredientfilterdiv" ).hide();
+
+            }
+        });
+        //INGREDIENT SLIDER (on change)
+        $( "#ingredientRanger" ).change(function() {
+
+            //display the value of ingredient slider
+            document.getElementById("ingredientHeading").innerHTML="Maximum Ingredients: "+$( "#ingredientRanger" ).val();
+
+        });
+
+        //SORT CHECK BOX (on change)
+        $('#sortCheckbox').change(function() {
+            //if checked, show the sort container that contains sort options
+            if($(this).is(":checked")) {
+                $( "#sortdiv" ).show();
+
+            }
+            else{
+                $( "#sortdiv" ).hide();
+
+            }
+        });
+
+
+
+
+
+        //===========================================================CHECK BOXES AND SLIDERS END
+
+
+
+
+
+
+
+
+
+        //if cancel button (inside sort/filter container) is clicked, hide sort/filter container
+        $( "#hidebutton" ).click(function() {
+
+            $( "#sortfilterdiv" ).hide();
+
+
+        });
+
+        //if search button (inside sort/filter container) is clicked, sort/fiter the recipes
+        $( "#searchbutton" ).click(function() {
+
+
+            //get a chosen sorting option
+            var selectedMenuValue= $( "#inputGroupSelect" ).val();
+            //initialize the recipes
+            recipeObjects = JSON.parse((recipeContents));
+
+
+            //===============================================SORTING START
+
+
+
+            //there is no point for relevance
+            /*
+            if(selectedMenuValue === "relevance")
+            {
+                recipeObjects = JSON.parse((recipeContents));
+            }
+            */
+            //if the chosen sorting option is calorie, sort recipes by calories
+            if(selectedMenuValue === "calorie")
+            {
+                recipeObjects.sort(function(a, b){return a.calories - b.calories});
+
+            }
+            //if the chosen sorting option is time, sort recipes by cooking time
+            else if(selectedMenuValue === "time")
+            {
+                recipeObjects.sort(function(a, b){return a.time - b.time});
+
+            }
+            //if the chosen sorting option is ingredient, sort recipes by the number of ingredients
+            else if(selectedMenuValue === "Ingredient")
+            {
+                recipeObjects.sort(function(a, b){return a.ingredients - b.ingredients});
+
+            }
+
+
+
+            //===============================================SORTING END
+
+
+            //===============================================FILTERING START
+
+
+            //if calorie checkbox is checked, filter the recipes by limiting the maximum calories
+            if($('#calorieCheckbox').is(":checked")) {
+                recipeObjects = recipeObjects.filter( obj => obj.calories <= parseInt($( "#caloriesRanger" ).val()));
+            }
+            //if time checkbox is checked, filter the recipes by limiting the maximum cooking time
+            if($('#timeCheckbox').is(":checked")) {
+                recipeObjects = recipeObjects.filter( obj => obj.time <= parseInt($( "#timeRanger" ).val()));
+            }
+            //if ingredient checkbox is checked, filter the recipes by limiting the maximum number of ingredients
+            if($('#ingredientCheckbox').is(":checked")) {
+                recipeObjects = recipeObjects.filter( obj => obj.ingredients <= parseInt($( "#ingredientRanger" ).val()));
+            }
+
+
+            //===============================================FILTERING END
+
+            //display 15 recipes initially - current length of food recipes to display initially is 15
+            currentRecipeLength=maxLoad;
+            //show load more button
+            $("#loadmorebutton").show();
+
+            generateRecipes();
+
+            //hide sort/fiter container
+            $( "#sortfilterdiv" ).hide();
+
+            //recipe title that contains the length of recipes (for example, 200 recipes found)
+            document.getElementById("recipetitleheading").innerHTML=recipeObjects.length+" Recipes Found";
+
+
+        });
+
+
+
+
+        //if sort/fiter button is clicked
+        $( "#showsortfilterbutton" ).click(function() {
+
+
+            //hide all the containers
+            $( "#caloriefilterdiv" ).hide();
+            $( "#timefilterdiv" ).hide();
+            $( "#ingredientfilterdiv" ).hide();
+            $( "#sortdiv" ).hide();
+
+            //show sort options and checkboxes
+            $( "#sortfilterdiv" ).show();
+            $('#calorieCheckbox').prop('checked', false);
+            $('#timeCheckbox').prop('checked', false);
+            $('#ingredientCheckbox').prop('checked', false);
+            $('#sortCheckbox').prop('checked', false);
+
+
+
+
+
+
+
+        });
+
+
+
+    });
+
+
+
+
+
+    function AssignMaxRecipeLength() {
+        //if recipes are less than 15, hide the load more button and assign the current number of recipes as the maximum number of recipes
+        if (recipeObjects.length < maxLoad) {
+            $("#loadmorebutton").hide();
+            currentRecipeLength = recipeObjects.length;
+        }
+
+    }
+
+
+
+    function generateRecipes() {
+        var gridcontainer;
+        var cardcontainer;
+        var imageElement;
+        var cardbodycontainer;
+        var cardtitleElement;
+        var cardtextElement;
+        var recipelinkElement;
+        var footerElement;
+        var smalltextElement;
+        //remove all the cards
+        while(maincontainer.firstChild)
+        {
+            maincontainer.removeChild(maincontainer.firstChild);
+        }
+        //get recipe length
+        AssignMaxRecipeLength();
+        for(let i=0; i<currentRecipeLength; i++)
+        {
+            //create layout
+            gridcontainer=document.createElement("div");
+            gridcontainer.className="col-sm-4";
+            gridcontainer.setAttribute("style", "margin-bottom: 1.5rem;");
+
+            //create a card container
+            cardcontainer=document.createElement("div");
+            cardcontainer.className="card";
+            cardcontainer.setAttribute("style", "width: 100%;");
+
+            //create an image
+            imageElement=document.createElement("img");
+            imageElement.className="card-img-top";
+            imageElement.setAttribute("style", "width: 100%; height: 23rem; object-fit: cover; overflow: hidden;");
+            imageElement.src=recipeObjects[i].image;
+
+            //create a card body container
+            cardbodycontainer=document.createElement("div");
+            cardbodycontainer.className="card-body";
+
+            //create a card title
+            cardtitleElement=document.createElement("h5");
+            cardtitleElement.className="card-title";
+            cardtitleElement.innerHTML=recipeObjects[i].title;
+
+            //create a card content
+            cardtextElement=document.createElement("p");
+            cardtextElement.className="card-text";
+            cardtextElement.innerHTML=recipeObjects[i].ingredients+" ingredients<br>Cooking Time: "+recipeObjects[i].time+" mins";
+
+            //create a url button to external recipe websites
+            recipelinkElement=document.createElement("a");
+            recipelinkElement.className="btn btn-secondary";
+            recipelinkElement.innerHTML="Recipe";
+            recipelinkElement.href=recipeObjects[i].recipe;
+
+            //create a card footer
+            footerElement=document.createElement("div");
+            footerElement.className="card-footer";
+
+            //create a calories text
+            smalltextElement=document.createElement("small");
+            smalltextElement.className="text-muted";
+            smalltextElement.innerHTML=parseInt(recipeObjects[i].calories)+" kcal";
+
+
+
+
+
+
+
+
+
+
+            //============================================================CARD COMPONENTS START
+
+            //place the food name inside the card body
+            cardbodycontainer.appendChild(cardtitleElement);
+
+            //place the text (number of ingredients and cooking time) inside the card body
+            cardbodycontainer.appendChild(cardtextElement);
+
+            //place the recipe url button inside the card body
+            cardbodycontainer.appendChild(recipelinkElement);
+
+            //place the calories text inside the card footer
+            footerElement.appendChild(smalltextElement);
+
+            //============================================================CARD COMPONENTS END
+
+
+            //============================================================CREATE CARD START
+
+            //place the image inside the card
+            cardcontainer.appendChild(imageElement);
+
+            //place the card body inside the card
+            cardcontainer.appendChild(cardbodycontainer);
+
+            //place the card footer inside the card
+            cardcontainer.appendChild(footerElement);
+
+            //============================================================CREATE CARD END
+
+
+            //layout the card
+            gridcontainer.appendChild(cardcontainer);
+
+            //place the created sub container inside the main container
+            maincontainer.appendChild(gridcontainer);
+
+
+        }
+    }
+
+    //if load more button clicked
+    $( "#loadmorebutton" ).click(function() {
+
+
+        //if the current recipe length is equal or more than the maximum number of recipes, do not display the button and alert the user
+        if(currentRecipeLength>=recipeObjects.length)
+        {
+            alert("No more recipes found");
+            $( "#loadmorebutton" ).hide();
+        }
+        //if the remaining number of recipes is less than or equal to 15, assign the current recipe length with the maximum number of recipes
+        else if((currentRecipeLength+maxLoad)>=recipeObjects.length)
+        {
+            currentRecipeLength=recipeObjects.length;
+        }
+        //if the remaining number of recipes is more than 15, add 15 to the length of current recipe length
+        else
+        {
+            currentRecipeLength+=maxLoad;
+        }
+        //create recipes based on the newly assigned length of recipes
+        generateRecipes();
+
+
+
+
+    });
+    //===========================================================================WIKIPEDIA API USING AJAX START
+    $(function() {
+
+        const url = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ getmyfoodName +"&format=json&callback=?";
+        $.ajax({
+            url: url,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            dataType: "json",
+            //if there is no error, it returns data
+            success: function(data, status, jqXHR) {
+
+                //declare variables for description, heading and hyperlinks for the food
+                const foodDescriptionPart=data[2][0];
+                const foodHeading=data[1][0];
+                const foodLink=data[3][0];
+
+                //display heading
+                document.getElementById("foodHeading").innerHTML="<h2>" + foodHeading+ "</h2>";
+
+
+                /*
+                 THINGS TO KNOW ABOUT WIKIPEDIA API
+                 if the length of food description is 0, this means there isn't any content for the food, but there are some relevant contents for the search term
+                 if the length of food description is more than 0, this means there is a content for the search term
+                 if food heading or food description is undefined, it means there is no content and no relevant result for the search term
+                 */
+
+                //if there isn't any information on Wikipedia while there is one or more recipes, just display the food name in the heading
+                if(typeof foodHeading === "undefined" && recipeObjects.length>0)
+                {
+                    document.getElementById("foodHeading").innerHTML="<h2>" + getmyfoodName + "</h2>";
+                    document.getElementById("foodDescription").innerHTML="<p>Sorry, we could not find any relevant information on Wikipedia</p>";
+                }
+                //if there isn't any information on Wikipedia and there is no recipe, alert the user and redirect the user to the homepage
+                else if(typeof foodHeading === "undefined" && recipeObjects.length<=0)
+                {
+                    alert("Sorry we could not find any recipe for "+getmyfoodName);
+                    window.location.href="../../";
+                }
+                //if there is a Wikipedia content and there is one or more recipes for the food, display the heading, description and url
+                else if(foodDescriptionPart.length>0 && recipeObjects.length>0)
+                {
+                    document.getElementById("foodDescription").innerHTML="<p>"+foodDescriptionPart+"</p>";
+                    document.getElementById("wikilink").href="https://en.wikipedia.org/wiki/"+foodHeading;
+                    $( "#wikilink" ).show();
+                }
+                //if there is a Wikipedia content and there is no recipe for the food, alert the user and redirect the user to the homepage
+                else if(foodDescriptionPart.length>0 && recipeObjects.length<=0)
+                {
+                    alert("There are some descriptions about the food on Wikipedia, but there isn't any recipe found for "+getmyfoodName);
+                    window.location.href="../../";
+                }
+                //if there isn't any Wikipedia content and there is one or more recipes for the food, just display the food name in the heading
+                else if(foodDescriptionPart.length<=0 && recipeObjects.length>0)
+                {
+                    document.getElementById("foodHeading").innerHTML="<h2>" + getmyfoodName + "</h2>";
+                    document.getElementById("foodDescription").innerHTML="<p>Sorry, we could not find any relevant information on Wikipedia</p>";
+                }
+                //if there isn't any Wikipedia content and no recipe while there are some relevant results on Wikipedia
+                else if(foodDescriptionPart.length<=0 && recipeObjects.length<=0)
+                {
+                    //use CORS to redirect to the most relevant content
+                    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+                    const url = foodLink; // site that doesn’t send Access-Control-*
+                    fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+                        .then(response => response.text())
+                        .then(function(contents){
+
+                            //get the name of the most relevant content using regular expression to extract data from title tag
+                            var expectedfood=contents.match(/<title>([\s\S]*?)<\/title>/im).pop();
+                            //remove unnecessary information
+                            var getfood=(expectedfood.split("- Wikipedia")).toString();
+                            getfood=getfood.replace(/,/g, '');
+                            getfood=getfood.trim();
+                            //redirect to the recipe page with the new food name as the parameter
+                            window.location.href="../recipe/"+getfood;
+
+
+                        })
+                        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+
+
+
+                }
+
+
+            }
+        })
+
+    });
+    //===========================================================================WIKIPEDIA API USING AJAX END
+
+</script>
