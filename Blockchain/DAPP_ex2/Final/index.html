@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DAPP_EX2</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/nivo-slider/css/nivo-slider.css" rel="stylesheet">
+  <link href="lib/owlcarousel/owl.carousel.css" rel="stylesheet">
+  <link href="lib/owlcarousel/owl.transitions.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/venobox/venobox.css" rel="stylesheet">
+
+  <!-- Nivo Slider Theme -->
+  <link href="css/nivo-slider-theme.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Responsive Stylesheet File -->
+  <link href="css/responsive.css" rel="stylesheet">
+  <script src="web3/dist/web3.min.js"></script>
+
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+
+  <div id="preloader"></div>
+
+  <header>
+    <!-- header-area start -->
+    <div id="sticker" class="header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+                <!-- Brand -->
+                <a class="navbar-brand page-scroll sticky-logo" href="index.html">
+                  <h1>Election</h1>
+                  <!-- Uncomment below if you prefer to use an image logo -->
+                  <!-- <img src="img/logo.png" alt="" title=""> -->
+								</a>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="active">
+                    <a class="page-scroll" href="#home">Home</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#about">About</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#services">Services</a>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- navbar-collapse -->
+            </nav>
+            <!-- END: Navigation -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header-area end -->
+  </header>
+  <!-- header end -->
+
+
+
+  <!-- Start About area -->
+  <div id="about" class="about-area area-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="section-headline text-center">
+            <h2 id="totalvotes"><br>2021년 대통령 선거</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          
+          
+                                  		    <div class="col-md-4">
+
+                        
+<div class="card mb-4">
+
+    <!--Card image-->
+    <div class="view overlay">
+      <img class="card-img-top" src="img/candidate1.jpg" style="max-width: 25rem;">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!--Title-->
+      <h4 class="card-title"><br>후보1: 추미애</h4>
+      <!--Text-->
+      <p class="card-text">소속: 더불어민주당</p>
+      <p class="card-text" id="candidatelabel1">투표수: </p>
+      <p class="card-text" id="candidatepercentage1">투표율: </p>
+
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <input type="button" id="candidatebutton1" class="btn btn-light-blue btn-md" value="Vote">
+
+    </div>
+
+  </div>
+                        
+       
+          </div>
+          
+                    		    <div class="col-md-4">
+<div class="card mb-4">
+
+    <!--Card image-->
+    <div class="view overlay">
+      <img class="card-img-top" src="img/candidate2.jpg" style="max-width: 25rem;">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!--Title-->
+      <h4 class="card-title"><br>후보2: 유승민</h4>
+      <!--Text-->
+      <p class="card-text">소속: 바른정당</p>
+      <p class="card-text" id="candidatelabel2">투표수: </p>
+      <p class="card-text" id="candidatepercentage2">투표율: </p>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <input type="button" id="candidatebutton2" class="btn btn-light-blue btn-md" value="Vote">
+
+    </div>
+
+  </div>
+                        
+       
+          </div>
+                    		    <div class="col-md-4">
+<div class="card mb-4">
+
+    <!--Card image-->
+    <div class="view overlay">
+      <img class="card-img-top" src="img/candidate3.jpg" style="max-width: 25rem;">
+      <a href="#!">
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    <!--Card content-->
+    <div class="card-body">
+
+      <!--Title-->
+      <h4 class="card-title"><br>후보3: 김성태</h4>
+      <!--Text-->
+      <p class="card-text">소속: 자유한국당</p>
+      <p class="card-text" id="candidatelabel3">투표수: </p>
+      <p class="card-text" id="candidatepercentage3">투표율: </p>
+      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+      <input type="button" id="candidatebutton3" class="btn btn-light-blue btn-md" value="Vote">
+
+    </div>
+
+  </div>
+                        
+       
+          </div>
+          
+          
+      </div>
+    </div>
+  </div>
+  <!-- End About area -->
+
+
+  <!-- End Blog -->
+ 
+  <!-- Start Footer bottom Area -->
+  <footer>
+    <div class="footer-area">
+      <div class="container">
+        <div class="row">
+            
+            
+            
+            
+            
+
+              
+              
+              
+              
+              
+              
+
+
+        </div>
+      </div>
+    </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    <div class="footer-area-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+              <p>
+                &copy; 2018 All CopyRights Reserved by JHY
+              </p>
+            </div>
+            <div class="credits">
+              <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/venobox/venobox.min.js"></script>
+  <script src="lib/knob/jquery.knob.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/parallax/parallax.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+  <script src="lib/appear/jquery.appear.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+    <script>
+             
+        if(typeof(web3) !== 'undefined')
+        {
+            web3=new Web3(web3.currentProvider);
+        }
+        else
+        {
+            web3=new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));    
+        }
+        web3.eth.defaultAccount=web3.eth.accounts[0];
+        
+    var valueContract=web3.eth.contract([
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "cd",
+				"type": "bytes32"
+			}
+		],
+		"name": "getVote",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "cnd",
+		"outputs": [
+			{
+				"name": "name",
+				"type": "bytes32"
+			},
+			{
+				"name": "votesfor",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTotalVotes",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "cd",
+				"type": "bytes32"
+			}
+		],
+		"name": "setVote",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalvotes",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	}
+]);
+        //0xbdea8aaced90f896f2cf4e5d1c10ebaa3ec3576f
+        
+        //change contract address
+        var ContractInstance=valueContract.at("0xbdea8aaced90f896f2cf4e5d1c10ebaa3ec3576f");
+        
+        function showPercentage()
+        {
+            var numvotes=ContractInstance.getVote("candidate1")/ContractInstance.getTotalVotes();
+            numvotes=numvotes*100;
+            document.getElementById("candidatepercentage1").innerHTML="투표율: "+numvotes.toFixed(2)+"%";
+            
+            numvotes=ContractInstance.getVote("candidate2")/ContractInstance.getTotalVotes();
+            numvotes=numvotes*100;
+            document.getElementById("candidatepercentage2").innerHTML="투표율: "+numvotes.toFixed(2)+"%";
+            
+            numvotes=ContractInstance.getVote("candidate3")/ContractInstance.getTotalVotes();
+            numvotes=numvotes*100;
+            document.getElementById("candidatepercentage3").innerHTML="투표율: "+numvotes.toFixed(2)+"%";
+        }
+        
+        
+        
+                
+                $( "#candidatebutton1" ).click(function() {
+                    ContractInstance.setVote("candidate1");
+                    document.getElementById("candidatelabel1").innerHTML="투표수: "+ContractInstance.getVote("candidate1");
+                    document.getElementById("candidatelabel2").innerHTML="투표수: "+ContractInstance.getVote("candidate2");
+                    document.getElementById("candidatelabel3").innerHTML="투표수: "+ContractInstance.getVote("candidate3");             
+                    document.getElementById("totalvotes").innerHTML="<br>2021년 대통령 선거 (총 참여수: "+ContractInstance.getTotalVotes()+")";
+                    showPercentage();
+                });
+                
+                $( "#candidatebutton2" ).click(function() {
+                    ContractInstance.setVote("candidate2");
+                    document.getElementById("candidatelabel1").innerHTML="투표수: "+ContractInstance.getVote("candidate1");
+                    document.getElementById("candidatelabel2").innerHTML="투표수: "+ContractInstance.getVote("candidate2");
+                    document.getElementById("candidatelabel3").innerHTML="투표수: "+ContractInstance.getVote("candidate3");                         document.getElementById("totalvotes").innerHTML="<br>2021년 대통령 선거 (총 참여수: "+ContractInstance.getTotalVotes()+")";
+                    showPercentage();            
+                });
+                $( "#candidatebutton3" ).click(function() {
+                    ContractInstance.setVote("candidate3");
+                    document.getElementById("candidatelabel1").innerHTML="투표수: "+ContractInstance.getVote("candidate1");
+                    document.getElementById("candidatelabel2").innerHTML="투표수: "+ContractInstance.getVote("candidate2");
+                    document.getElementById("candidatelabel3").innerHTML="투표수: "+ContractInstance.getVote("candidate3");                         document.getElementById("totalvotes").innerHTML="<br>2021년 대통령 선거 (총 참여수: "+ContractInstance.getTotalVotes()+")";
+                    showPercentage();
+                });
+
+        
+        
+        
+    </script>
+
+</html>
